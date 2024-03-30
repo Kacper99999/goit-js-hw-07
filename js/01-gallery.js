@@ -9,12 +9,13 @@ const head = document.querySelector("head");
 
 const link = document.createElement("link");
 
+link.href = "https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js";
 
 head.append(link);
 
 const biblioteka = document.createElement("script");
 
-
+biblioteka.src ="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js";
 
 gallery.after(biblioteka);
 
