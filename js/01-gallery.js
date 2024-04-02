@@ -37,7 +37,7 @@ gallery.after(biblioteka);
         linkTag.append(imageTag);
   }
   
-}
+};
 
 function selectImage(event){
   event.preventDefault()
@@ -50,7 +50,17 @@ function selectImage(event){
   const lightbox = basicLightbox.create(`<img src="${selectedImage}">`);
   
   lightbox.show();
-}
+
+  document.addEventListener("keydown", event =>{
+    if(event.key === "Escape"){
+      lightbox.close()
+    }
+    else{
+      return;
+    }
+  })
+};
+
 
 createImages();
 
