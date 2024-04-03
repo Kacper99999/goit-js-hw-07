@@ -14,8 +14,7 @@ gallery.after(biblioteka);
 
 function createImages(){
   for(let i = 0; i < galleryItems.length; i++){
-    
-     //Create list elements------------------------------
+      //Create list elements------------------------------
       const liTag = document.createElement("li");
       liTag.classList.add("gallery__item");
 
@@ -44,9 +43,13 @@ let lightbox = null;
 function selectImage(event){
   event.preventDefault();
   if(!lightbox){
-    lightbox = new SimpleLightbox(".gallery a");
-    length.attr = event.target.alt;
-    }
+    lightbox = new SimpleLightbox('.gallery a', {
+      captions: true, 
+      captionType: 'attr', 
+      captionDelay: 250, 
+      captionsData: 'alt' 
+  });
+ }
 };
 
 createImages();
